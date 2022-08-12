@@ -6,7 +6,15 @@ import org.springframework.stereotype.Service;
 import com.example.demo.dto.UserDTO;
 import com.example.demo.entities.User;
 import com.example.demo.repositories.UserRepository;
-
+/*
+ * Essa notação diz ao spring que essa classe será uma Bean e ele será o responsável pelo gerenciamento de suas instâncias
+ * Como o Spring fica responsável pelo gerenciamento, eu não preciso de um new para criar um objeto dela, basta injetar 
+ * com a notação @Autowired em algum local que eu necessite
+ * 
+ * Se a classe for externa ao meu projeto, por exemplo, vinda de uma depedência que eu precisei utilizar no projeto eu não posso anotar ela
+ * com as notações usuais de minhas classes internas e torná-las numa bean simplesmente. Eu preciso criar uma classe com @Configuration e 
+ * anotar o método que vai retornar o tipo da classe externa com o @Bean e a partir daí o Spring vai gerencialá.
+ */
 @Service
 public class UserService {
 	@Autowired
